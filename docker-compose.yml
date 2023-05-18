@@ -7,11 +7,12 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/app
+      - ./src:/app/src
+    
   tests:
     build:
       context: .
       dockerfile: Dockerfile.dev
     volumes:
-      - .:/app
+      - ./src:/app/src
     command: ["npm", "run", "test"]
